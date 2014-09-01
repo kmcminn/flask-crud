@@ -14,3 +14,24 @@ an example flask crud api
 3. mysql -uroot -p -e 'CREATE DATABASE `flask_asset` CHARACTER SET utf8 COLLATE utf8_general_ci'
 4. alembic upgrade head
 5. test with fab tasks
+
+## Project Layout
+quick project layout
+
+    ├── alembic.ini [alembic config]
+    ├── app.py [entry point]
+    ├── db [migrations]
+    │   ├── backup
+    │   └── versions [migration files]
+    ├── fabfile [tasks: shell, tests, dev server]
+    ├── flaskapi [app]
+    │   ├── config [app config]
+    │   ├── controllers [views+decorators+routes]
+    │   ├── forms [form classes]
+    │   ├── models [sqlalchemy models]
+    │   ├── static [static assets]
+    │   ├── templates [view templates]
+    │   └── util.py
+    ├── README.md [this file]
+    ├── requirements.txt [module manifest]
+    └── tests [unit/integration tests]
