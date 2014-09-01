@@ -67,7 +67,6 @@ def search(terms=''):
 @app.route('/api/get/<my_id>')
 def fetch(my_id=''):
     result = Asset.query.get(my_id)
-    app.logger.debug(result.count())
     try:
         content = result.asset_binary
     except:
