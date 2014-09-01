@@ -69,6 +69,6 @@ class Asset(db.Model, Base):
         try:
             for item in query_object:
                 results.append(item.as_dict())
-        except Exception, e:
+        except Exception:
             results.append(query_object.as_dict())
         return results
