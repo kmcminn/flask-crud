@@ -1,0 +1,9 @@
+{% for result in results %}
+{
+    'id': {{ result.id | safe }},
+    'name': {{ result.name }},
+    'description': {{ result.description }},
+    'type': {{ result.type }},
+    'asset_content': {{ result. content }}
+}
+{% endfor %}

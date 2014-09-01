@@ -1,0 +1,21 @@
+COMMON: &common
+  DEBUG: False
+  TESTING: False
+  ALLOWED_EXTENSIONS:
+    - txt
+    - pdf
+  UPLOAD_FOLDER: '/tmp'
+  SECRET_KEY: 'looks_secure'
+
+DEVELOPMENT: &development
+  <<: *common
+  DEBUG: True
+  DATABASE: 'flask_asset'
+  MAX_CONTENT_LENGTH: "10000000"
+  SQLALCHEMY_DATABASE_URI: 'mysql://root:password@localhost/flask_asset'
+
+
+PRODUCTION: &production
+  <<: *common
+  DATABASE: 'production_db'
+  MAX_CONTENT_LENGTH: "50000000"
