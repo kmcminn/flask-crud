@@ -1,12 +1,12 @@
 from flaskapi.models.asset import *
 from flaskapi.util import *
 from flaskapi.forms.upload import FileForm
-from flask import request, make_response, flash, render_template
+from flask import request, make_response, flash, render_template, redirect
 
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('form.html')
+    return redirect('/api/publish/', code=302)
 
 
 @app.route('/api/test/<param>', methods=['GET'])
